@@ -1,0 +1,10 @@
+#reading_area{
+    font-size: 25px;
+    color: darkgoldenrod;
+    background-color: black;
+    border: 2px solid darkgray;
+    text-align: center;
+    height: 55px;
+    line-height: 55px;
+    font-family: Helvetica;
+}
