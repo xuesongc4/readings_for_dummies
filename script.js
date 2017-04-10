@@ -1,6 +1,6 @@
 
-var speed = 600;
-var counter = 1;
+var speed = 300;
+var counter = 3;
 var started_flag = false;
 var current_word = null;
 
@@ -11,7 +11,8 @@ $(document).ready(function(){
 
 
 function get_spaces(){
-    get_spaces.text_to_parse = $('.text_to_read').val();
+    get_spaces.sandwhich_spaces=' '+$('.text_to_read').val()+' ';
+    get_spaces.text_to_parse = get_spaces.sandwhich_spaces;
     var previous = null;
     var current = null;
     get_spaces.spaces_array = [];
@@ -27,7 +28,7 @@ function get_spaces(){
         current = get_spaces.spaces_array[j];
 
         if(current-1 != previous){
-            get_spaces.spaces_array_final.push(previous);
+            get_spaces.spaces_array_final.push(current);
         }
     }
     console.log( get_spaces.spaces_array_final);
@@ -50,7 +51,7 @@ function print_words(position){
     function doScaledTimeout(i) {
         setTimeout(function () {
             current_word = i;
-            console.log(current_word);
+            // console.log(current_word);
             $("#reading_area").text(get_words.word_array[i])
         }, i * speed);
     }
@@ -106,4 +107,12 @@ function change_speed(){
             }
         }
     });
+}
+
+function flip_page(){
+    $("#intro_page").addClass("flip_page");
+    $(".click_to_start").removeClass("click_hover")
+    setTimeout(function(){
+        $("#intro_page").fadeOut();
+    },1500)
 }
