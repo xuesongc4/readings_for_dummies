@@ -12,25 +12,68 @@ body{
     width: 900px;
     margin: auto;
 }
-
-#reading_area{
-    font-size: 25px;
-    color: darkgoldenrod;
-    background-color: black;
-    border: 2px solid darkgray;
+.text_to_read{
+    width: 100%;
+    height: 25%;
+    font-size: 20px;
+    padding: 50px 0;
+    border-top: 5px solid black;
+}
+.instructions{
+    margin-top: -5px;
+    font-size: 20px;
+    font-family: "PT Sans", sans-serif;
+    padding:30px 100px;
     text-align: center;
-    height: 55px;
-    line-height: 55px;
-    font-family: Helvetica;
 }
 
-#intro_page{
+#reading_area{
+    margin: auto;
+    width:450px;
+    font-size: 50px;
+    color: snow;
+    background-color: black;
+    text-align: center;
+    height: 75px;
+    line-height: 75px;
+    border: 5px solid darkgoldenrod;
+    font-family: Helvetica;
+}
+.reading_container{
+    margin: 30px auto 80px auto;
+    position: relative;
+}
+
+.highlight{
+    background-color: #fD0014;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#intro_page, #app_page{
     width: 100%;
     height: 100vh;
-    background-color: #ffff00;
     position: relative;
     border: black solid 5px;
     overflow: hidden;
+}
+#intro_page{
+    z-index: 10;
+}
+.curser{
+    height: 10px;
+    border: solid 3px darkgoldenrod;
+    margin: auto;
+    position: absolute;
+    left:50%;
+}
+.bottom{
+    bottom:0;
+}
+
+#app_page{
+    background-color: #ffff00;
 }
 
 #intro_page .click_to_start{
@@ -63,7 +106,7 @@ body{
     transform: rotate(-15deg);
 }
 
-#intro_page .click_to_start:hover{
+#intro_page .click_hover:hover{
     box-shadow: 3px 3px 10px 5px black;
     animation: blink 1.3s infinite;
 }
@@ -123,7 +166,6 @@ body{
     margin-left: -50px;
 }
 
-
 .head_line3,.head_line2{
     font-family: "dummy", sans-serif;
     color: #ffff00;
@@ -151,11 +193,67 @@ body{
     transform:scale(.3);
 }
 
-
-#intro_page > img{
+.front_page > img{
     position: absolute;
     bottom: 32px;
     right: 160px;
     transform:scale(1.5);
 }
+.back_page{
+    position: absolute;
+    background-color: white;
+    transform: rotateY(180deg);
+    height: 100%;
+    width: 100%;
+}
+.front_page{
+    background-color: #ffff00;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 
+}
+.flip_page{
+    transition-duration: 1.5s;
+    transform: rotateY(-180deg);
+    transform-origin: 0% 50%;
+    transform-style: preserve-3d;
+}
+
+
+#wpm_display{
+    text-align: center;
+    font-family: "dummy", sans-serif;
+    color: #ffff00;
+    font-size: 40px;
+    padding: 30px;
+    margin-left: -35%;
+}
+.controls{
+    background-color: black;
+    border-top: 15px solid #fD0014;
+    text-align: center;
+    margin-left: -15%;
+    margin-top: -6%;
+}
+
+button{
+    cursor: pointer;
+    width: 150px;
+    height:150px;
+    background-color: #fD0014;
+    color: white;
+    border-radius: 50%;
+    font-size: 35px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow:  2px 2px 5px black;
+    margin-top: -50px;
+}
+
+#app_page img{
+    position: absolute;
+    top: 45px;
+    left: -110px;
+}
