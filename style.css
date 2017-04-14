@@ -46,12 +46,15 @@ body{
 
 .highlight{
     background-color: #fD0014;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 25px;
 }
 
-#intro_page, #app_page{
+.focus{
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+}
+
+#app_page{
     width: 100%;
     height: 100vh;
     position: relative;
@@ -59,8 +62,14 @@ body{
     overflow: hidden;
 }
 #intro_page{
-    z-index: 10;
+    z-index: 1;
+    position: absolute;
+    height: 100vh;
+    width: 900px;
+    border: black solid 5px;
+    overflow: hidden;
 }
+
 .curser{
     height: 10px;
     border: solid 3px darkgoldenrod;
@@ -214,9 +223,9 @@ body{
 
 }
 .flip_page{
+    -webkit-transform-origin: left;
     transition-duration: 1.5s;
     transform: rotateY(-180deg);
-    transform-origin: 0% 50%;
     transform-style: preserve-3d;
 }
 
@@ -227,15 +236,34 @@ body{
     color: #ffff00;
     font-size: 40px;
     padding: 30px;
-    margin-left: -35%;
 }
-.controls{
+.controls1{
     background-color: black;
     border-top: 15px solid #fD0014;
     text-align: center;
-    margin-left: -15%;
-    margin-top: -6%;
+    margin-top: -5%;
 }
+.controls2{
+    text-align: center;
+    font-size: 100px;
+}
+.controls2 .fa{
+    padding: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.fa.fa-pause-circle{
+    display: none;
+    margin-right: -10px;
+}
+
+.controls2 .fa:active{
+    color: #fD0014;
+}
+
+
 
 button{
     cursor: pointer;

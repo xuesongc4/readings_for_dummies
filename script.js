@@ -39,32 +39,75 @@ function get_words(){
     }
 }
 
-function print_words(position){
+function print_words(setting){
     var reading_area = $("#reading_area");
 
     clearInterval(interval);
-    interval = setInterval(function(){
-        reading_area.text(get_words.word_array[print_counter]);
-        print_counter++;
-        if (print_counter == get_words.word_array.length){
-            clearInterval(interval);
-            print_counter=0;
-            started_flag=false;
-        }
-    }, speed);
+    if(setting=="play"){
+        interval = setInterval(function(){
+            reading_area.text(get_words.word_array[print_counter]);
+            print_counter++;
+            if (print_counter == get_words.word_array.length){
+                clearInterval(interval);
+                print_counter=0;
+                started_flag=false;
+                $(".fa-play-circle").toggle();
+                $(".fa-pause-circle").toggle()
+            }
+        }, speed);
+    }
 }
 
-function doit(){
-    get_spaces();
-    get_words();
-    print_words();
-    started_flag=true;
+function doit(setting){
+
+    if(setting=='play') {
+        get_spaces();
+        get_words();
+        print_words("play");
+        started_flag=true;
+    }
+    else{
+        print_words("pause");
+        started_flag=false;
+    }
+
+
+    $(".fa-play-circle").toggle();
+    $(".fa-pause-circle").toggle()
 }
 
 function speed_display(speed_input){
     var temp_speed=1000/(speed_input/60);
     speed = parseInt(temp_speed);
-    $(".wpm").text(speed_input);
+    var wpm = $(".wpm")
+    wpm.text(speed_input);
+    wpm.addClass("highlight")
+    setTimeout(function(){wpm.removeClass("highlight")},300);
+}
+
+function change_speed2(direction){
+    if(direction=="up") {
+        if(counter == 8){
+            return
+        }
+        counter++;
+        speed_display(counter*100);
+
+        if(started_flag == true){
+            print_words("play");
+        }
+    }
+    if(direction=="down") {
+        if(counter == 1){
+            return
+        }
+        counter--;
+        speed_display(counter*100);
+        if(started_flag == true){
+            print_words("play");
+        }
+    }
+
 }
 
 function change_speed(){
@@ -78,8 +121,7 @@ function change_speed(){
             speed_display(counter*100);
 
             if(started_flag == true){
-                print_words(print_counter);
-                console.log("your word position is: "+print_counter)
+                print_words("play");
             }
         }
         if(e.which==40) {
@@ -89,8 +131,7 @@ function change_speed(){
             counter--;
             speed_display(counter*100);
             if(started_flag == true){
-                print_words(print_counter);
-                console.log("your word position is: "+print_counter)
+                print_words("play");
             }
         }
     });
