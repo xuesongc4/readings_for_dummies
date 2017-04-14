@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <script src="script.js"></script>
 
 </head>
@@ -36,11 +37,11 @@
             <img src="images/dummie.png">
         </div>
     </div>
-</div>
-<div class="container">
     <div id="app_page">
         <div class="instructions">
-            Just paste whatever it is you wish to read in the textbox and hit the "Start Reading" button! Hit the  <span class="highlight">up arrow </span>on your keyboard to increase your WPM or the  <span class="highlight">down arrow </span>to decrease your WPM.
+            Just paste whatever it is you wish to read in the textbox and hit the "Start Reading" button! Hit the <span
+                class="highlight focus">up arrow </span>on your keyboard or the controls to increase your WPM or the <span class="focus highlight">down arrow </span>to
+            decrease your WPM.
         </div>
         <img src="images/dummie.png">
         <div class="reading_container">
@@ -48,15 +49,18 @@
             <div id="reading_area"></div>
             <div class="curser bottom"></div>
         </div>
-        <div class="controls">
+        <div class="controls1">
             <div id="wpm_display">WPM: <span class="wpm">300</span></div>
-            <button onclick="doit()">Start Reading</button>
+
         </div>
         <textarea class="text_to_read">
-        According to google the average reader reads at a speed of around 200 words per a minute. However by removing the need for your eyes to move you can easily read much faster. For example right now you are reading at about 300 words per a minute. Which is pretty cool!
+        According to google the average reader reads at a speed of around 200 to 300 words per a minute. However by removing the need for your eyes to move you can easily read much faster. For example right hit the up arrow and see how much faster you can read, what you'll find might amaze you!
 
-        Anyways enjoy the application!
-    </textarea>
+        Anyways find a nice passage you wish to read and paste it into the text box and enjoy the application!
+        </textarea>
+        <div class="controls2">
+            <i onclick="doit('play')" class="fa fa-play-circle"></i> <i onclick="doit('pause')" class="fa fa-pause-circle"></i><i onclick="change_speed2('up')"class="fa fa-arrow-circle-up"></i>  <i onclick="change_speed2('down')" class="fa fa-arrow-circle-down"></i>
+        </div>
     </div>
 </div>
 </body>
