@@ -11,6 +11,7 @@ body{
 .container{
     width: 900px;
     margin: auto;
+    perspective: 2000px;
 }
 .text_to_read{
     width: 100%;
@@ -68,6 +69,10 @@ body{
     width: 900px;
     border: black solid 5px;
     overflow: hidden;
+    -webkit-transform-origin: left;
+    transition-duration: 1.5s;
+    transition-property: transform;
+    transform-origin: left;
 }
 
 .curser{
@@ -210,7 +215,8 @@ body{
 }
 .back_page{
     position: absolute;
-    background-color: white;
+    background: url("images/AMR-inside.jpg") center center no-repeat;
+    background-size:cover;
     transform: rotateY(180deg);
     height: 100%;
     width: 100%;
@@ -223,8 +229,6 @@ body{
 
 }
 .flip_page{
-    -webkit-transform-origin: left;
-    transition-duration: 1.5s;
     transform: rotateY(-180deg);
     transform-style: preserve-3d;
 }

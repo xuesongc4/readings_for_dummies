@@ -139,8 +139,5 @@ function change_speed(){
 
 function flip_page(){
     $("#intro_page").addClass("flip_page");
-    $(".click_to_start").removeClass("click_hover")
-    setTimeout(function(){
-        $("#intro_page").fadeOut();
-    },1500)
+    $(".click_to_start").removeClass("click_hover");
 }
