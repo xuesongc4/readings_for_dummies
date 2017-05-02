@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
 }
 
@@ -9,29 +9,29 @@ body{
 }
 
 .container{
-    width: 900px;
+    width: 100vw;
     margin: auto;
     perspective: 2000px;
 }
 .text_to_read{
     width: 100%;
-    height: 25%;
-    font-size: 20px;
+    height: 10%;
+    font-size: 16px;
     padding: 50px 0;
     border-top: 5px solid black;
 }
 .instructions{
     margin-top: -5px;
-    font-size: 20px;
+    font-size: 12px;
     font-family: "PT Sans", sans-serif;
-    padding:30px 100px;
+    padding:30px 30px;
     text-align: center;
 }
 
 #reading_area{
     margin: auto;
-    width:450px;
-    font-size: 50px;
+    width:85%;
+    font-size: 35px;
     color: snow;
     background-color: black;
     text-align: center;
@@ -41,7 +41,8 @@ body{
     font-family: Helvetica;
 }
 .reading_container{
-    margin: 30px auto 80px auto;
+
+    margin:0 auto 50px auto ;
     position: relative;
 }
 
@@ -51,13 +52,13 @@ body{
 
 .focus{
     font-weight: bold;
-    font-size: 25px;
+    font-size: 16px;
     font-style: italic;
 }
 
 #app_page{
     width: 100%;
-    height: 100vh;
+    height: 667px;
     position: relative;
     border: black solid 5px;
     overflow: hidden;
@@ -65,8 +66,8 @@ body{
 #intro_page{
     z-index: 1;
     position: absolute;
-    height: 100vh;
-    width: 900px;
+    height: 667px;
+    width: 100%;
     border: black solid 5px;
     overflow: hidden;
     -webkit-transform-origin: left;
@@ -104,7 +105,7 @@ body{
     text-shadow:  2px 2px 5px black;
     position: absolute;
     padding: 65px 65px 0 65px;
-    bottom: 90px;
+    bottom: 150px;
     left: 130px;
     transform: rotate(-5deg);
     transition-duration: .6s;
@@ -145,10 +146,10 @@ body{
 
 #intro_page .title_section .sub_head {
     position: absolute;
-    top:-45px;
+    top:-30px;
     left:8%;
     color: #fD0014;
-    font-size: 40px;
+    font-size: 25px;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-style: italic;
@@ -156,12 +157,12 @@ body{
 
 #intro_page .title_section .edition {
     position: absolute;
-    top:-290px;
-    right: -8%;
+    top:-260px;
+    right: -100px;
     color: white;
     font-size: 25px;
-    height: 325px;
-    width: 385px;
+    height: 280px;
+    width: 300px;
     border-radius: 50%;
     background-color: #fD0014;
     transform: rotate(5deg);
@@ -171,13 +172,14 @@ body{
     font-weight: bold;
     margin-top: 175px;
     margin-left: -50px;
-    font-size: 60px;
+    font-size: 30px;
 }
 
 #intro_page .title_section .edition .sub_edition2{
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     margin-left: -50px;
+    font-size: 20px;
 }
 
 .head_line3,.head_line2{
@@ -185,19 +187,19 @@ body{
     color: #ffff00;
 }
 .head_line1{
-    font-size: 120px;
+    font-size: 65px;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-style: italic;
 }
 
 .head_line2{
-     font-size: 50px;
+     font-size: 30px;
  }
 .head_line3{
     margin-top:20px;
     margin-bottom: 10px;
-    font-size: 100px;
+    font-size: 50px;
 }
 
 .edition > img{
@@ -209,9 +211,8 @@ body{
 
 .front_page > img{
     position: absolute;
-    bottom: 32px;
+    bottom: -25px;
     right: 160px;
-    transform:scale(1.5);
 }
 .back_page{
     position: absolute;
@@ -239,7 +240,7 @@ body{
     font-family: "dummy", sans-serif;
     color: #ffff00;
     font-size: 40px;
-    padding: 30px;
+    padding: 10px;
 }
 .controls1{
     background-color: black;
@@ -250,6 +251,7 @@ body{
 .controls2{
     text-align: center;
     font-size: 100px;
+    position: absolute;
 }
 .controls2 .fa{
     padding: 20px;
@@ -286,6 +288,91 @@ button{
 
 #app_page img{
     position: absolute;
-    top: 45px;
-    left: -110px;
+    top: 195px;
+    left: -60px;
+    height: 140px;
+}
+
+@media only screen and (min-width: 900px) {
+    .front_page > img{
+        bottom: 32px;
+        right: 160px;
+        transform:scale(1.5);
+    }
+    .container {
+        width: 900px;
+    }
+
+    .instructions {
+        font-size: 20px;
+        padding: 30px 100px;
+    }
+
+    .focus {
+        font-size: 25px;
+    }
+
+    #app_page img {
+        height: 290px;
+        top: 45px;
+        left: -110px;
+    }
+
+    #intro_page {
+        width: 900px;
+    }
+
+    .head_line1 {
+        font-size: 120px;
+    }
+
+    .head_line2 {
+        font-size: 50px;
+    }
+
+    .head_line3 {
+        font-size: 100px;
+    }
+
+    #intro_page .title_section .sub_head {
+        top: -45px;
+        font-size: 40px;
+    }
+    #intro_page .title_section .edition .sub_edition1{
+        font-size: 60px;
+    }
+
+    #intro_page .title_section .edition .sub_edition2{
+        font-size: 25px;
+    }
+    #intro_page .title_section .edition {
+        top:-290px;
+        right: -8%;
+        height: 325px;
+        width: 385px;
+    }
+}
+@media only screen and (min-width: 726px){
+   #reading_area{
+       width: 450px;
+       font-size: 50px;
+   }
+    #wpm_display{
+        padding: 30px;
+    }
+    .text_to_read{
+        height: 25%;
+        font-size: 20px;
+    }
+    .reading_container{
+        margin: 30px auto 80px auto;
+    }
+
+    #app_page{
+        height: 940px;
+    }
+    #intro_page {
+        height: 940px;
+    }
+
 }
